@@ -10,6 +10,6 @@ public class Professor
 
     public void imprimir()
     {
-        System.out.println();
+        System.out.println(lotacao);
     }
 }
