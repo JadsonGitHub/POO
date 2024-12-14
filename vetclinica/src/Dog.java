@@ -44,14 +44,14 @@ public class Dog
     public String toString()
     {
         StringBuilder sb = new StringBuilder();
-        sb.append("Nome:\n · ").append(dogName)
+        sb.append("\nDog: \n · ").append(dogName)
           .append(", Raça: ").append(race)
           .append(", Cor: ").append(cor)
           .append(", Sexo: ").append(sexo)
-          .append(", Nascimento: ").append(nacto)
+          .append(", Nacto: ").append(nacto)
           .append(", Peso: ").append(peso)
           .append("\n")
-          .append("Tutor:\n · ")
+          .append("Dono: \n · ")
           .append(tutor != null ? tutor.toString() : "Cao sem Dono")
           .append("\n")
           .append("Vacinas: ");
@@ -59,9 +59,9 @@ public class Dog
           //.append("\n");
         if (vacinas != null && !vacinas.isEmpty())
         {
-            for (Vacina v : vacinas) sb.append("\n · ").append(v.toString()).append("\n");
+            for (Vacina v : vacinas) sb.append("\n · ").append(v.toString());
         }
-        else sb.append("\n · Nao Vacinado \n");
+        else sb.append("\n · Nao Vacinado");
         return sb.toString();
     }
 }

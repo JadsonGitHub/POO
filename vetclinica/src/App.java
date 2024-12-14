@@ -80,9 +80,9 @@ public class App
                                 if (cachorro.setVacina(vacina)) System.out.println("\nVacinado com sucesso!");
                                 else System.out.println("Registro Cheio");
                             }
-                            else System.out.println("Vacina não encontrada ou já aplicada");
+                            else System.out.println("\nVacina nao encontrada ou já aplicada");
                         }
-                        else System.out.println("Dog nao encontrado.");
+                        else System.out.println("\nDog nao encontrado.");
                         break;
                     case 4:
                         if(clinica.getVacinas().isEmpty()) System.out.println("Vacinas nao Cadastradas");
@@ -97,7 +97,7 @@ public class App
                         cpf = sc.next();
                         System.out.println();
                         tutor = clinica.findTutor(cpf);
-                        if (tutor != null) System.out.print("Tutor: " + tutor);
+                        if (tutor != null) System.out.println("Tutor: " + tutor);
                         else System.out.println("Dono nao encontrado");
                         break;
                     case 7: People.clearWindow();
