@@ -61,7 +61,7 @@ public class Dog
         {
             for (Vacina v : vacinas) sb.append("\n · ").append(v.toString()).append("\n");
         }
-        else sb.append("Nao Vacinado \n");
+        else sb.append("\n · Nao Vacinado \n");
         return sb.toString();
     }
 }

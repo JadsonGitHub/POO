@@ -2,8 +2,9 @@ import java.time.LocalDate;
 
 public class Vacina
 {
-    private String vacName, lote;
-    private LocalDate validade, aplicacao;
+    private final String vacName, lote;
+    private final LocalDate validade;
+    private LocalDate aplicacao;
 
     public Vacina(String nome, String lote, LocalDate validade)
     {
