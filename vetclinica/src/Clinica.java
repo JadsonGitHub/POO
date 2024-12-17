@@ -34,7 +34,8 @@ public class Clinica
     {
         for (Dog dog : dogs)
         {
-            if(dog.toString().contains(name) && dog.toString().contains(tutorName))
+            //if(dog.toString().contains(name) && dog.toString().contains(tutorName))
+            if(dog.getDogName().equals(name) && dog.toString().contains(tutorName))
             {
                 return dog;
             }

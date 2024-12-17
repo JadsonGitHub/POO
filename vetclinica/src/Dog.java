@@ -25,11 +25,11 @@ public class Dog
         this.peso = peso;
         this.vacinas = new ArrayList <> ();
     }
-    public boolean setVacina(Vacina v) 
+    public boolean setVacinas(Vacina v) 
     {
         if (vacinas.size() < MAXVAC)
         {
-            v.vacinar();
+            v.setAplicacao();
             vacinas.add(v);
             return true;
         }
@@ -39,6 +39,8 @@ public class Dog
     public void setTutor (People tutor) { this.tutor = tutor;}
 
     public People getTutor () { return tutor;}
+
+    public String getDogName() { return dogName;}
 
     @Override
     public String toString()
@@ -63,5 +65,5 @@ public class Dog
         }
         else sb.append("\n · Nao Vacinado");
         return sb.toString();
-    }
+    }    
 }

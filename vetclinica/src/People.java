@@ -1,6 +1,6 @@
 public class People
 {
-    private final String name, cpf, tel;
+    private String name, cpf, tel;
 
     public People(String name, String cpf, String tel)
     {

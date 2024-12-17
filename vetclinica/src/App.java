@@ -77,7 +77,7 @@ public class App
                             vacina = clinica.findVacina(nomeV);
                             if (vacina != null)
                             {
-                                if (cachorro.setVacina(vacina)) System.out.println("\nVacinado com sucesso!");
+                                if (cachorro.setVacinas(vacina)) System.out.println("\nVacinado com sucesso!");
                                 else System.out.println("Registro Cheio");
                             }
                             else System.out.println("\nVacina nao encontrada ou já aplicada");

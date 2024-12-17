@@ -6,14 +6,14 @@ public class Vacina
     private final LocalDate validade;
     private LocalDate aplicacao;
 
-    public Vacina(String nome, String lote, LocalDate validade)
+    public Vacina (String nome, String lote, LocalDate validade)
     {
         this.vacName = nome;
         this.lote = lote;
         this.validade = validade;
         this.aplicacao = null;
     }
-    public void vacinar () { this.aplicacao = LocalDate.now();}
+    public void setAplicacao () { this.aplicacao = LocalDate.now();}
 
     @Override
     public String toString()
