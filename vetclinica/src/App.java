@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class App
 {
-    public static void main(String[] args)
+    public static void main (String[] args)
     {
         Clinica clinica = new Clinica();
         try (Scanner sc = new Scanner(System.in))
@@ -11,16 +11,7 @@ public class App
             //DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yy");
             int op;
             do {
-                System.out.println("\n\t MENU");
-                System.out.println("1 - Cadastrar vacina");
-                System.out.println("2 - Cadastrar cachorro");
-                System.out.println("3 - Aplicar uma vacina");
-                System.out.println("4 - Listar vacinas");
-                System.out.println("5 - Listar cachorros");
-                System.out.println("6 - Encontrar um Dono");
-                System.out.println("7 - Limpar Tela");
-                System.out.println("8 - Sair \n");
-                System.out.print(": "); 
+                App.Menu();
                 op = sc.nextInt();
                 sc.nextLine();
                 System.out.println();
@@ -28,7 +19,7 @@ public class App
                 {
                     case 1:
                         System.out.print("Nome da vacina: ");
-                        String nomeV = sc.next();
+                        String nomeV = sc.next().toUpperCase();
                         System.out.print("Lote: ");
                         String lote = sc.next();
                         System.out.print("Data de vencimento (AAAA-MM-DD): ");
@@ -46,7 +37,7 @@ public class App
                         System.out.print("Cor: ");
                         String cor = sc.next();
                         System.out.print("Sexo (M/F): ");
-                        char sexo = sc.next().toLowerCase().charAt(0);
+                        char sexo = sc.next().toUpperCase().charAt(0);
                         System.out.print("Data de nascimento (AAAA-MM-DD): ");
                         LocalDate nacto = LocalDate.parse(sc.next());
                         System.out.print("Peso: ");
@@ -73,7 +64,7 @@ public class App
                         if (cachorro != null)
                         {
                             System.out.print("Nome da vacina: ");
-                            nomeV = sc.next();
+                            nomeV = sc.next().toUpperCase();
                             vacina = clinica.findVacina(nomeV);
                             if (vacina != null)
                             {
@@ -86,8 +77,7 @@ public class App
                         break;
                     case 4:
                         if(clinica.getVacinas().isEmpty()) System.out.println("Vacinas nao Cadastradas");
-                        clinica.getVacinas().forEach (System.out :: println);
-                        break;
+                        clinica.getVacinas().forEach (System.out :: println); break;
                     case 5:
                         if (clinica.getDogs().isEmpty()) System.out.println("Dogs nao Cadastrados");
                         clinica.getDogs().forEach (System.out :: println);
@@ -100,7 +90,7 @@ public class App
                         if (tutor != null) System.out.println("Tutor: " + tutor);
                         else System.out.println("Dono nao encontrado");
                         break;
-                    case 7: People.clearWindow();
+                    case 7: App.clearWindow();
                     break;
                     case 8: System.out.println("Programa Finalizado\n");
                     break;
@@ -108,5 +98,23 @@ public class App
                 }
             } while (op != 8);
         }
+    }
+    public static void Menu()
+    {
+        System.out.println("\n\t MENU");
+        System.out.println("1 - Cadastrar vacina");
+        System.out.println("2 - Cadastrar cachorro");
+        System.out.println("3 - Aplicar uma vacina");
+        System.out.println("4 - Listar vacinas");
+        System.out.println("5 - Listar cachorros");
+        System.out.println("6 - Encontrar um Dono");
+        System.out.println("7 - Limpar Tela");
+        System.out.println("8 - Sair \n");
+        System.out.print("» ");
+    }
+    public static void clearWindow ()
+    {
+        System.out.print ("\033[H\033[2J");
+        System.out.flush ();
     }
 }

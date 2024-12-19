@@ -9,13 +9,7 @@ public class People
             this.tel = tel;
     }
 
-    public String getCpf() { return cpf;}
-
-    public static void clearWindow ()
-    {
-        System.out.print ("\033[H\033[2J");
-        System.out.flush ();
-    }
+    public String getCpf() { return cpf;}    
 
     @Override
     public String toString()
