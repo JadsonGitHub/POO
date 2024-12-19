@@ -2,17 +2,15 @@ public class Mamifero extends Animal
 {
     private String alimento;
 
-    public Mamifero(String alimento, String nome, String cor, String ambiente, double comprimento, double velocidade, int numPatas)
+    public Mamifero(String nome, String cor, String ambiente, double comprimento, double velocidade, int patas, String alimento)
     {
-        super(nome, cor, ambiente, comprimento, velocidade, numPatas);
+        super(nome, cor, ambiente, comprimento, velocidade, patas);
         this.alimento = alimento;
     }
 
     @Override
     public String toString()
     {
-        return "Mamifero [alimento=" + alimento + ", toString()=" + super.toString() + "]";
+        return super.toString() + "\nAlimento: " + alimento;
     }
-
-
 }

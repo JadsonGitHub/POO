@@ -2,22 +2,21 @@ public class Animal
 {
     private String nome, cor, ambiente;
     private double comprimento, velocidade;
-    private int numPatas;
+    private int patas;
 
-    public Animal(String nome, String cor, String ambiente, double comprimento, double velocidade, int numPatas)
+    public Animal(String nome, String cor, String ambiente, double comprimento, double velocidade, int patas)
     {
-        this.nome = nome;
         this.cor = cor;
+        this.nome = nome;
+        this.patas = patas;
         this.ambiente = ambiente;
-        this.comprimento = comprimento;
         this.velocidade = velocidade;
-        this.numPatas = numPatas;
+        this.comprimento = comprimento;
     }
 
     @Override
     public String toString()
     {
-        return "Animal [nome=" + nome + ", cor=" + cor + ", ambiente=" + ambiente + ", comprimento=" + comprimento
-                + ", velocidade=" + velocidade + ", numPatas=" + numPatas + "]";
+        return "Animal: " + nome + ", Cor: " + cor + ", Habitat: " + ambiente + ", Tamanho: " + comprimento + ", Velocidade: " + velocidade + ", Patas: " + patas;
     }
 }
