@@ -1,23 +1,70 @@
+import java.util.ArrayList;
+
 public class Clinica
 {
+    private ArrayList <Dog> dogs = new ArrayList <> ();
+    private ArrayList <Vacina> vacinas = new ArrayList <> ();
+    private final int MAXDOG = 30;
+    private final int MAXVAC = 30;
+    
     public Clinica()
     {
-        
+        this.dogs = new ArrayList<>();
+        this.vacinas = new ArrayList<>();
+    }
+    public boolean addDog(Dog c)
+    {
+        if(dogs.size() < MAXDOG)
+        {
+            dogs.add(c);
+            return true;
+        }
+        return false;
+    }
+    public boolean addVacina(Vacina v)
+    {
+        if(vacinas.size() < MAXVAC)
+        {
+            vacinas.add(v);
+            return true;
+        }
+        return false;
+    }
+    public Dog findDog (String name, String tutorName)
+    {
+        for (Dog dog : dogs)
+        {
+            //if(dog.toString().contains(name) && dog.toString().contains(tutorName))
+            if(dog.getDogName().equals(name) && dog.toString().contains(tutorName))
+            {
+                return dog;
+            }
+        }
+        return null;
+    }
+    public Vacina findVacina(String name)
+    {
+        for (Vacina vacina : vacinas)
+        {
+            if(vacina.toString().contains(name) && !vacina.toString().contains("Aplicacao"))
+            {
+                return vacina;
+            }
+        }
+        return null;
+    }
+    public People findTutor(String cpf)
+    {
+        for (Dog dog : dogs)
+        {
+            People tutor = dog.getTutor();
+            if (tutor != null && tutor.getCpf().equals(cpf)) return tutor;
+        }
+        return null;
     }
 
-    public void cadastrarCachorro(Dog c){}
-// Adiciona um objeto do tipo Cachorro ao registro de cachorros. Obs: Observe o limite de cadastros.
-// Retorna um boolean true se foi possível adicionar e false caso não seja possível.
-    public void cadastrarVacina(Vacina v){}
-//Adiciona um objeto do tipo Vacina ao registro de vacinas. Obs: Observe o limite de cadastros.
-// Retorna um boolean true se foi possível adicionar e false caso não seja possível.
-    public void pesquisarCachorro (String name, String tutorName){}
-// Realiza a pesquisa de um cachorro, a partir do seunome combinado com o nome do tutor e retorna o objeto Cachorro relacionado.
-// Retorna o objeto Cachorro que possui as informações compatíveis, caso não exista, retorna null.
-    public void pesquisarVacina(String name){}
-// Realiza a pesquisa de uma vacina pelo nome e que não tenha sido aplicada ainda.
-// Retorna o objeto Vacina que possui as informações de nome compatível e com a data de aplicação nula, caso não exista, retorna null.
-    public void pesquisarTutor(String cpf){}
-//Realiza a pesquisa de um tutor pelo cpf.
-// Retorna objeto um objeto Pessoa que possui as informações de cpf compatível.
+    public ArrayList <Dog> getDogs () { return dogs;}
+
+    public ArrayList <Vacina> getVacinas () { return vacinas;}
+
 }

@@ -1,22 +1,23 @@
-
 import java.time.LocalDate;
 
 public class Vacina
 {
-    private String vacinaName, lote;
-    private LocalDate vencimento, aplicacao;
+    private final String vacName, lote;
+    private final LocalDate validade;
+    private LocalDate aplicacao;
 
-    public Vacina(String nome, String lote, LocalDate vencimento)
+    public Vacina (String nome, String lote, LocalDate validade)
     {
-        this.vacinaName = nome;
+        this.vacName = nome;
         this.lote = lote;
-        this.vencimento = vencimento;
+        this.validade = validade;
+        this.aplicacao = null;
     }
+    public void setAplicacao () { this.aplicacao = LocalDate.now();}
 
     @Override
     public String toString()
     {
-        return "Vacina [Nome da Vacina =" + vacinaName + ", Lote =" + lote + ", Vencimento =" + vencimento + "]";
+        return "Vacina: " + vacName + ", Lote: " + lote + ", Validade: " + validade + (aplicacao != null ? ", Aplicacao: " + aplicacao : "");
     }
-    
 }
