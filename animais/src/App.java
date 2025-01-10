@@ -9,7 +9,7 @@ public class App
         Animal c1 = new Mamifero("camelo", "amarelo", "terra", 150, 2.0, 4, "?");
 
         Mamifero c2 = new Mamifero("camelo", "amarelo", "terra", 150, 2.0, 4, "?");
-        Mamifero c3 = (Mamifero) new Animal("camelo", "amarelo", "terra", 150, 2.0, 4);
+        //Mamifero c3 = (Mamifero) new Animal("camelo", "amarelo", "terra", 150, 2.0, 4);
         
         System.out.println();
         System.out.println(tubarao.toString());
@@ -22,7 +22,7 @@ public class App
         System.out.println();
         System.out.println(c2.toString());
         System.out.println();
-        System.out.println(c3.toString());
+        //System.out.println(c3.toString());
         System.out.println();
     }
 }
